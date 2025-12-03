@@ -1,0 +1,1 @@
+DATABASE_url = "sqlite:///data/bank.db"
