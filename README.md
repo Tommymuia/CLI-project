@@ -24,7 +24,7 @@ Account Management
 ## Security Features
   Password validation (min length, symbols, numbers).
 
-  
+
 Models that I will be working with
 ## User Model
 Represents each person using the system.
