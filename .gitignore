@@ -1,0 +1,31 @@
+# Python cache and build files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+build/
+dist/
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# SQLite database and data files
+data/*.db
+data/*.sqlite
+
+# OS-specific clutter
+.DS_Store
+Thumbs.db
+
+# Editor/IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment varia
