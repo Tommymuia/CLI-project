@@ -1,6 +1,8 @@
 from datetime import datetime
 from db import SessionLocal
 from models import Account, Transaction
+from email_service import send_transaction 
+
 
 
 def _get_account(session, account_number: str):
@@ -32,8 +34,16 @@ def deposit(account_number: str, amount: float, description: str = None):
 
         session.add(tx)
         session.commit()
+        
+        #sending transaction email
+        subject = "Deposit Confirmation"
+        body = f"Dear {account.owner.username}, \n\nYour deposit of {amount} has been successful.\nCurrent Balance: {account.balance}"
+        send_transaction(account.owner.email,subject,body)
 
         print(f"Deposited {amount} into {account_number}. New balance: {account.balance}")
+    except Exception as e:
+        session.rollback()
+        print("Deposit failed", e)
     finally:
         session.close()
 
