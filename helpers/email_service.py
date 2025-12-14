@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from config import DEFAULT_SENDER, SMTP_SERVER, SMTP_PORT, SMTP_PASSWORD
 
-def send_transaction(recipient_email: str, subject: str, body: str, amount, balance, name: str):
+def deposit_transaction(recipient_email: str, subject: str, body: str, amount, balance, name: str):
     amount = float(amount)
     balance = float(balance)
 

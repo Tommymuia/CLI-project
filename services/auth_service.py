@@ -57,6 +57,12 @@ def delete_user(username: str):
         if not user:
             print(f"User '{username}' not found.")
             return
+        
+        
+        
+        #deleting the accounts
+        for account in user.accounts:
+            session.delete(account)
 
         session.delete(user)
         session.commit()

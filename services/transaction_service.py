@@ -1,11 +1,7 @@
 from datetime import datetime
 from db import SessionLocal
 from models import Account, Transaction
-from helpers.email_service import send_transaction
-
-
-
-
+from helpers.email_service import deposit_transaction
 
 
 
@@ -48,7 +44,7 @@ def deposit(account_number: str, amount: float, description: str = None):
     "Best Regards,\n"
     "Muia CLI Group"
 )
-        send_transaction(
+        deposit_transaction(
     account.owner.email,
     subject,
     body,          
